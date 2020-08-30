@@ -1,11 +1,11 @@
 class AppearancesController < ApplicationController
     def index
         @appearances = Appearance.all
-      end
+    end 
 
       def new 
         @appearances = Appearance.new
       end 
-
+    end 
       
-end
+
