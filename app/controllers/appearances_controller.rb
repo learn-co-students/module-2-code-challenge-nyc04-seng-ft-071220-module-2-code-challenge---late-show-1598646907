@@ -20,8 +20,4 @@ class AppearancesController < ApplicationController
 
 end
 
-# if @comments.save
-#     redirect_to(:action => 'showbooks')
-#   else
-#     redirect_to(:action => 'home')
 # "appearance"=>{"episode_id"=>"1", "guest_id"=>"1", "rating"=>"5"}
