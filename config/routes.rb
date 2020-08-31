@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
-  
-  # get '/guests', to: 'guests#index' 
-  # get '/episodes', to: 'episodes#index'
+  # resources :appearances, only: [:index, :new, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :appearances
-  resources :guests, only: [:index]
-  resources :episodes, only: [:index]
-end
+  
+  get '/appearances', to: 'appearances#index' 
+  get '/appearances/new', to: 'appearances#new' 
+  post '/appearances', to: 'appearances#create'
+  # post '/episodes', to: 'episodes#create'
+  # resources :guests, only: [:index]
+  # resources :episodes, only: [:index]
+  get '/episodes', to: 'episodes#index' 
+  get '/episodes', to: 'episodes#new' 
+  post '/episodes', to: 'episodes#create'
+  get '/guests', to: 'guests#index' 
+  get '/guests', to: 'guests#new' 
+  post '/guests', to: 'guests#create'
 
-# get '/restaurants', to: 'restaurants#index'
+end 
 
-# resources :restaurants, only: [:index, :show]
+
+

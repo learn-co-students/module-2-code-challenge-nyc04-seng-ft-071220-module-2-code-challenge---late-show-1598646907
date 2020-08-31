@@ -1,0 +1,21 @@
+<h1> Appearances </h1>
+
+<%= form_for @appearances do |f| %>
+    # <%= f.label :episode_id, "Episode: " %>
+    <%= f.collection_select :episode_id, @episodes, :id, :date %> <br>
+    <%= f.label :guest_id, "Guest:" %>
+    <%= f.collection_select :guest_id, @guests,  :id, :name %> <br>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %> 
+
+    <%= f.submit "Submit" %>
+    redirect_to episode_path(episode)
+<% end %>
+
+
+# A user can fill out a form to create a new Appearance. They can:
+
+# - Choose an existing guest from a select dropdown
+# - Choose an existing episode from a select dropdown
+# - Enter a numeric rating
+# - Submit the form
