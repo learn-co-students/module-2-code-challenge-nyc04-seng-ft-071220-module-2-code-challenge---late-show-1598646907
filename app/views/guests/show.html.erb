@@ -1,0 +1,14 @@
+<h1>This is the show view on guests</h1>
+    <p> You are looking at <%= @guest.name %>' page </p> <br>
+<ul>
+    <li> List of episodes where <%= @guest.name %> has appeared <br>
+        <% @guest.episodes.each do |episode| %>
+            Episode number: <%= episode.number %>,
+            Aired on: <%= link_to episode.date, episode_path(episode) %>,
+            with Rating: <%@guest.appearances.each do |appearance| %>
+                        <%= appearance.rating %>
+                    <% end %> <br>
+   
+        <% end %>
+    </li>
+</ul>

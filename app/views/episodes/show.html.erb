@@ -1,0 +1,8 @@
+<h1>View on the episode Show</h1>
+
+<ul>
+    <li> Episode aired on: <%= @episode.date %></li>
+    <li> Guests on the episode<% @episode.guests.map do |episode|  %><br>
+        <%= link_to episode.name, guest_path(episode) %>
+    <% end %> </li>
+</ul>
