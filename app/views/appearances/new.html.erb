@@ -5,13 +5,15 @@
             
             <%= form_for @appearance do |f| %>
             <%= f.label "Choose existing guest"%>
-            <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+            <%= f.collection_select :guest_id, Guest.all, :id, :name %> 
+            <%# https://stackoverflow.com/questions/8907867/can-someone-explain-collection-select-to-me-in-clear-simple-terms %>
             <br>
             <%= f.label "Choose existing episode"%>
             <%= f.collection_select :episode_id, Episode.all, :id, :date %>
+            <%# https://apidock.com/rails/ActionView/Helpers/FormTagHelper/number_field_tag %>
             <br>
             <%= f.label :rating %>
-            <%= f.number_field :rating, {min:1, max:10} %>
+            <%= f.number_field :rating, {min:1, max:5} %>
             <br>
             <%= f.submit %>
             <% end %>
@@ -24,6 +26,3 @@
 Choose an existing episode from a select dropdown
 Enter a numeric rating
 Submit the form %>
-
-
-<%# <%= collection_select(:person, :city_id, City.all, :id, :name) %> 
