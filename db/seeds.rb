@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Guest.destroy_all
+Appearance.destroy_all
+Guest.destroy_all 
+Episode.destroy_all
 
 require 'csv'
 

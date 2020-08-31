@@ -1,7 +1,13 @@
-<h1>All Episodes</h1>
+<div class="container text-center p-5">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1>All Episodes</h1>
 
-<ul>
-  <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
-  <% end %>
-</ul>
+      <ul class="list-group">
+        <% @episodes.each do |episode| %>
+        <li class="list-group-item"><%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}", episode_path(episode) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

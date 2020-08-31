@@ -1,12 +1,16 @@
-<div class="container">
+<div class="container text-center p-5">
+
     <h1> Guest Show Page</h1>
     <h2> <%= @guest.name %> </h2>
 
-    <div class="row">
-        <div class="col">
-            <ul>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <ul class="list-group">
                 <% @guest.episodes.each do |episode|%>
-                    <li> <%= link_to episode.date, episode_path(episode) %> - <%= @guest.get_rating(episode.id) %> </li> <%# get_rating logic written in Guest model %>
+                <li class="list-group-item"> <%= link_to "Episode: #{episode.number} - Air Date: #{episode.date}", episode_path(episode) %>
+                Rating: <%= @guest.get_rating(episode.id) %>
+                </li>
+                <%# get_rating logic written in Guest model %>
                 <% end %>
             </ul>
         </div>
@@ -21,5 +25,3 @@ For each Episode, show the:
 date of the Episode
 rating for the Appearance
 Each Episode date should link to the show page for that Episode. %>
-
-

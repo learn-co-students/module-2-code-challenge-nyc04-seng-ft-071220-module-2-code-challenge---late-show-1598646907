@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
+<div class="container text-center p-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
             <h1> Create a new appearance </h1>
             
             <%= form_for @appearance do |f| %>
@@ -9,20 +9,35 @@
             <%# https://stackoverflow.com/questions/8907867/can-someone-explain-collection-select-to-me-in-clear-simple-terms %>
             <br>
             <%= f.label "Choose existing episode"%>
-            <%= f.collection_select :episode_id, Episode.all, :id, :date %>
+            <%= f.collection_select :episode_id, Episode.all, :id, :number %>
             <%# https://apidock.com/rails/ActionView/Helpers/FormTagHelper/number_field_tag %>
             <br>
             <%= f.label :rating %>
-            <%= f.number_field :rating, {min:1, max:5} %>
+            <%= f.number_field :rating, min: 1, max: 5 %>
             <br>
-            <%= f.submit %>
+            <%= f.submit class: "btn btn-primary" %>
             <% end %>
+
+            <div class="row justify-content-center">
+                    <% if @errors %>
+                        <% @errors.each do |error|%>
+                            <div class="alert alert-success m-3" role="alert">
+                            <%= error %>
+                            </div>
+                        <% end %>
+                    <% end %>
+            </div>
 
         </div>
     </div>
 </div>
 
-<%# Choose an existing guest from a select dropdown
+<%# 
+2. New Appearance Form
+A user can fill out a form to create a new Appearance. They can:
+
+Choose an existing guest from a select dropdown
 Choose an existing episode from a select dropdown
 Enter a numeric rating
-Submit the form %>
+Submit the form
+After submitting the form, the user should be redirected to the selected episode's show page. %>
