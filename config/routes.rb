@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :appearances, only: [:index, :new, :create]
+  # resources :appearances, only: [:index, :new, :create, :post]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   get '/appearances', to: 'appearances#index' 
@@ -11,15 +11,20 @@ Rails.application.routes.draw do
   get '/episodes', to: 'episodes#index' 
   get '/episodes', to: 'episodes#new' 
   post '/episodes', to: 'episodes#create'
-  # get '/episodes/:id', to: 'episode#show' as: 'episode'
+  # get '/episodes/:id', to: 'episodes#show' as: 'episode'
+  
+
   get '/guests', to: 'guests#index' 
   get '/guests', to: 'guests#new' 
   post '/guests', to: 'guests#create'
-
-  #to be redirected to episode page
-  
-
+ 
 end 
 
+  #to be redirected to episode page
 
 
+
+
+
+
+  # "appearance"=>{"episode_id"=>"1", "guest_id"=>"1", "rating"=>"5"}

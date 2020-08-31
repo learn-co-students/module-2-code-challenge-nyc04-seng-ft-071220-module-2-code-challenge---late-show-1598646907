@@ -2,7 +2,7 @@
 
 <ul>
   <% @appearances.each do |appearance| %>
-    <li><%=link_to appearance.rating, appearance_path(appearance) %></li>
+    <li><%=link_to appearance.rating, appearances_path(appearance) %></li>
   <% end %>
 </ul>
   
