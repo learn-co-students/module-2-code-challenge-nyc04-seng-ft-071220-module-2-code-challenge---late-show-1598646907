@@ -25,3 +25,9 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+
+jackie = Guest.create!(name:"Jackie", occupation:"Martial Artist")
+roger = Guest.create!(name: "Roger", occupation: "Tennis player")
+
+ap1 = Appearance.create!(rating: 4, guest: jackie, episode_id:1)
+ap2 = Appearance.create!(rating: 3, guest: roger, episode_id:3)
