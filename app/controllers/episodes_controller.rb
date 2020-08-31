@@ -15,8 +15,7 @@ def create
   redirect_to episode_path(@episode)
 end
 
-
-# def show 
-#   @episode = Episode.find(params[:id])
-# end
+def show 
+  @episode = Episode.find(params[:id])
+end
 end 

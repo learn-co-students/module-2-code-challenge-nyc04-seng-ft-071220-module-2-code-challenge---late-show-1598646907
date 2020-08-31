@@ -11,9 +11,13 @@ Rails.application.routes.draw do
   get '/episodes', to: 'episodes#index' 
   get '/episodes', to: 'episodes#new' 
   post '/episodes', to: 'episodes#create'
+  # get '/episodes/:id', to: 'episode#show' as: 'episode'
   get '/guests', to: 'guests#index' 
   get '/guests', to: 'guests#new' 
   post '/guests', to: 'guests#create'
+
+  #to be redirected to episode page
+  
 
 end 
 
