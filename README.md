@@ -24,6 +24,9 @@ The application keeps track of the guests that have appeared on the show.
 There are three models in the domain: Guest, Episode, and Appearance.
 
 Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
+    
+
+    Guests --<Appearances>-- Episodes
 
 ## What You Already Have
 
