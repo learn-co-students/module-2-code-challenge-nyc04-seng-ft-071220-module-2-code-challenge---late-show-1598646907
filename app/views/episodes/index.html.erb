@@ -1,7 +1,10 @@
 <h1>All Episodes</h1>
-
+<hr>
+<h3> <%= link_to "Click here for Guests", "/guests/" %></h3>
+<hr>
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <li> <%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li> 
+    <br>
   <% end %>
 </ul>

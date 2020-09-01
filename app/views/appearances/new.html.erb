@@ -1,0 +1,22 @@
+<h1> Create a New Appearance! </h1>
+
+<hr><br>
+
+<%= form_for(@appearance) do |f| %>
+    <strong> <%= f.label :guest %> </strong>
+    <%= f.collection_select :guest_id, Guest.all, :id, :name %> <br>
+    <br>
+    <strong> <%= f.label :episode %> </strong>
+    <%= f.collection_select :episode_id, Episode.all, :id, :date %> <br>
+    <br>
+    <strong> <%= f.label :rating %> </strong>
+    <%= f.collection_select :rating, (1..5).to_a, :itself, :itself %> <br>
+    <br>
+    <%= f.submit %>
+<% end %>
+<br>
+<hr>
+<br>
+<li><%= link_to "All Guests", "/guests/" %> </li>
+<br>
+<li><%= link_to "All Episodes", "/episodes/" %> </li>

@@ -2,11 +2,14 @@ class Appearance < ApplicationRecord
   belongs_to :episode
   belongs_to :guest
 
-  validates :rating, numericality: {greater_than: 0, less_than_or_equal_to: 5}
+  validates :rating, numericality: {only_integer: true}, inclusion: {in: 1..5}
+
+  # Does this also work? -> validates :rating, numericality: {greater_than: 0, less_than_or_equal_to: 5}
+
 end
 
-# - Guests and Episodes have a many to many relationship through Appearances. 
-# - A single Appearance belongs to one Guest and one Episode. 
+# - Guests and Episodes have a many to many relationship THROUGH Appearances. 
+# - A single Appearance BELONGS_TO one Guest and one Episode. 
 
 # - Guest can appear on many episodes
 # - Episode can have multiple guests
