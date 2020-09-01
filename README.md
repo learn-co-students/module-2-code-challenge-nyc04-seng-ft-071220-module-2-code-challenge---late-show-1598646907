@@ -26,14 +26,16 @@ There are three models in the domain: Guest, Episode, and Appearance.
 ##############################################
 
 Guest -< Appearnce >- Episode
-Guest has_many apperances
-Guest has_many episodes through apperances
 
-episode has_many apperances
-episode has_many guests through appearnces
 
-appearance belongs_to guest
-apperance belongs_to episode
+*Guest has_many apperances
+*Guest has_many episodes through apperances
+
+*episode has_many apperances
+*episode has_many guests through appearnces
+
+*appearance belongs_to guest
+*apperance belongs_to episode
 
 ###############################################
 
