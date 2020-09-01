@@ -1,0 +1,17 @@
+<h1>Create A New Appearance!</h1>
+<%if @errors%>
+<% @errors.each do |error|%>
+<div style="color:red"><%= error %></div>
+<%end%>
+<%end%>
+
+<%= form_for @appearance do |f|%>
+    <%=f.label "Guest name" %><br>
+    <%=f.collection_select :guest_id, Guest.all, :id, :name%><br>
+    <%=f.label "Episode" %><br>
+    <%=f.collection_select :episode_id, Episode.all, :id, :number%><br>
+    <%=f.label "Rating" %><br>
+    <%=f.number_field :rating%><br>
+    <%=f.submit "submit"%>
+<% end %>
+

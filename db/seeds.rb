@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Appearance.destroy_all
 Guest.destroy_all
+Episode.destroy_all
+
+Guest.reset_pk_sequence
+Episode.reset_pk_sequence
+Appearance.reset_pk_sequence
 
 require 'csv'
 
@@ -25,3 +30,13 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+Appearance.create(guest:Guest.first, episode:Episode.first, rating: rand(1..5))
+Appearance.create(guest:Guest.second, episode:Episode.fifth,rating: rand(1..5))
+Appearance.create(guest:Guest.first, episode:Episode.second,rating: rand(1..5))
+Appearance.create(guest:Guest.second, episode:Episode.third,rating: rand(1..5))
+Appearance.create(guest:Guest.third, episode:Episode.first,rating: rand(1..5))
+Appearance.create(guest:Guest.first, episode:Episode.third,rating: rand(1..5))
+Appearance.create(guest:Guest.fourth, episode:Episode.first,rating: rand(1..5))
+Appearance.create(guest:Guest.first, episode:Episode.fourth,rating: rand(1..5))
+
+puts "😃"

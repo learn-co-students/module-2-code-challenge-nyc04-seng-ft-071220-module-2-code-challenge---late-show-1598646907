@@ -1,0 +1,19 @@
+<h1><%=@guest.name%></h1>
+<h2>Episode Date:<h2/>
+
+<ul>
+<% @guest.episodes.each do |episode|%>
+<li><%=link_to episode.date, episode_path(episode), method: :get%></li>
+<ul>
+<% episode.appearances.each do |appearance|%>
+    <li>Appearance Rating: <%=appearance.rating%></li>
+<%end%>
+</ul>
+<%end%>
+</ul>
+
+
+<br><br><br>
+<h3><%=link_to "Guest Home Page", guests_path, method: :get %></h3>
+<h3><%=link_to "Episodes Home Page", episodes_path, method: :get%></h3>
+<h3><%=link_to "Create a new appearance", new_appearance_path, method: :get%></h3>
