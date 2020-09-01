@@ -14,9 +14,19 @@
 <%= f.label :guest%>
 <%= f.collection_select :guest_id, Guest.all, :id, :name %>
 
-<%= f.label :Date%>
-<%= f.collection_select :episode_id, Episode.all, :id, :date %>
+<%= f.label :Episode_Number%>
+<%= f.collection_select :episode_id, Episode.all, :id, :number %>
 
 <%= f.submit "Submit Now"%>
 
 <%end%>
+
+
+<%# 
+collection_check_boxes? 
+Can you link check boxes together, if check of number, 
+corresponding date will also be checked off. 
+
+group.collection_select?
+
+ %>

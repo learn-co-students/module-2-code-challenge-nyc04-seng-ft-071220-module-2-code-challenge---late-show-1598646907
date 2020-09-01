@@ -7,6 +7,8 @@ class Appearance < ApplicationRecord
   # validates :rating, presence: true,  numericality: { only_integer: true }, inclusion: {in: 1..5}
   validate :correct_range, :guest_once_per_episode
 
+
+
   private 
   def correct_range
     # byebug
