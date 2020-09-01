@@ -1,6 +1,7 @@
 <h1> Episode <%= @episode.number %> </h1>
 
 <p> <strong> Episode date: </strong> <%= @episode.date %> </p>
+<p> <strong> Average Rating for the Appearances: </strong> <%= @episode.average_rating %> </p>
 <p> <strong> Guests on this episode: </strong> </p>
 <ul>
 <% @episode.guests.each do |guest| %>
