@@ -1,5 +1,13 @@
 <h1>New in Appearance view</h1>
 
+<% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+        <li> <%= error %></li>
+        <%end %>
+    <% end %>
+</ul>
+
 <h2> New Appearance</h2>
 <%= form_for @appearance do |f| %>
 <%= f.label :guest_id, "Guest:" %>

@@ -1,8 +1,15 @@
 <h1>View on the episode Show</h1>
 
 <ul>
-    <li> Episode aired on: <%= @episode.date %></li>
-    <li> Guests on the episode<% @episode.guests.map do |episode|  %><br>
+    <h4> Episode <%= @episode.number %>, aired on: <%= @episode.date %></h4><br>
+    <li> Guests on the episode<% @episode.guests.map do |episode|  %><br> 
         <%= link_to episode.name, guest_path(episode) %>
     <% end %> </li>
 </ul>
+
+    <h4> 
+        Average Rating for this episode is:
+        <%= @episode.appearances.average(:rating).round(2) %> 🌟
+    </h4>
+
+ 
