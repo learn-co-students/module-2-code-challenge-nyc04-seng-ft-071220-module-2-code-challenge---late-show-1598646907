@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   delete "appearances/:id", to: "appearances#destroy"
 
 
+  root 'welcome#home'
+
 end
