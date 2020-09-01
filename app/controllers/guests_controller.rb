@@ -14,7 +14,8 @@ class GuestsController < ApplicationController
   end
 
   def create
-    guest_params = params.require(:guest).permit(:name, :occupation )
+    # byebug
+    guest_params = params.require(:guest).permit(:name, :occupation)
     @guest = Guest.new(guest_params)
     if @guest.valid?
       @guest.save

@@ -12,7 +12,7 @@ class Guest < ApplicationRecord
         # byebug
         match = Guest.find_by(name: self.name, occupation: self.occupation)
         if match
-            self.errors.add(:name, "Already Exist" )
+            self.errors.add("Both name and occupation.", "Already Exist" )
         end
     end
 

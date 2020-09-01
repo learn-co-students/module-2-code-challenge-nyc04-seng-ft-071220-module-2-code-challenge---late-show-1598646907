@@ -16,9 +16,12 @@
 <%= f.text_field :occupation%><br>
 <br>
 
-
-
-
 <%= f.submit %>
 
 <%end%>
+
+
+<%#
+ f.label :occupation
+ f.collection_check_boxes :episode_ids, Episode.all, :id, :number 
+%>
