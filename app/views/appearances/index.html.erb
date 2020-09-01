@@ -1,0 +1,6 @@
+<h1>Appearances Index</h1>
+<ul>
+    <% @appearances.each do |app| %>
+        <li><%= app.guest.name%> - Episode <%= app.episode.number %> - Aired on: <%= app.episode.date%> - Rating: <strong><%= app.rating %></strong></li>
+    <% end %>
+</ul>
