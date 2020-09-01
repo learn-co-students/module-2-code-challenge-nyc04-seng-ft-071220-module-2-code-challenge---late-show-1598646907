@@ -1,11 +1,13 @@
-<h1>This is the show view on guests</h1>
-    <p> You are looking at <%= @guest.name %>' page </p> <br>
-<ul>
+<div style='text-align:center; padding: 200px 20px;'>
+    <p> You are looking at <strong><%= @guest.name %></strong>' page </p> <br>
+<ul style="list-style-type: none;">
     <li> List of episodes where <%= @guest.name %> has appeared <br><br>
         <% @guest.appearances.each do |guest_appearance| %>
             Episode number: <%= guest_appearance.episode_id %>. 
             Aired on: <%= link_to guest_appearance.episode.date, episode_path(guest_appearance.episode_id) %>,
-            with a <%= guest_appearance.rating %> 🌟 as rating<br>
+            with a <%= guest_appearance.rating %> 🌟 rating<br>
         <% end %>
     </li>
 </ul>
+
+</div>

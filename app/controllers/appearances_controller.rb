@@ -1,5 +1,9 @@
 class AppearancesController < ApplicationController
 
+    def index 
+        # this is my home page route/view
+    end 
+
     def new
         @appearance = Appearance.new
     end 
