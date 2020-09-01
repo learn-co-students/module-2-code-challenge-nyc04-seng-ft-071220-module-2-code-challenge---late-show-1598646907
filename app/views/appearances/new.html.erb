@@ -2,10 +2,10 @@
     <div class="row justify-content-center">
         <div class="col-6">
             <h1> Create a new appearance </h1>
-            
+
             <%= form_for @appearance do |f| %>
             <%= f.label "Choose existing guest"%>
-            <%= f.collection_select :guest_id, Guest.all, :id, :name %> 
+            <%= f.collection_select :guest_id, Guest.all, :id, :name %>
             <%# https://stackoverflow.com/questions/8907867/can-someone-explain-collection-select-to-me-in-clear-simple-terms %>
             <br>
             <%= f.label "Choose existing episode"%>
@@ -19,13 +19,16 @@
             <% end %>
 
             <div class="row justify-content-center">
-                    <% if @errors %>
-                        <% @errors.each do |error|%>
-                            <div class="alert alert-success m-3" role="alert">
-                            <%= error %>
-                            </div>
-                        <% end %>
-                    <% end %>
+                <% if @errors %>
+                <% @errors.each do |error|%>
+                <div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
+                    <%= error %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <% end %>
+                <% end %>
             </div>
 
         </div>

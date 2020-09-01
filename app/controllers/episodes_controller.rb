@@ -5,7 +5,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    @success = flash[:notice] # from appearance create action upon successfully creating appearance.
+    @success = flash[:notice] # coming from appearance#create action upon successfully creating appearance.
     @episode = Episode.find(params[:id])
   end
   

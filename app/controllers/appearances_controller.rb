@@ -3,6 +3,7 @@ class AppearancesController < ApplicationController
     def new
         @errors = flash[:error] # assigning the error messages to an instance variable, to render them in view/new.html.erb.
         @appearance = Appearance.new
+        
     end
 
     def create 

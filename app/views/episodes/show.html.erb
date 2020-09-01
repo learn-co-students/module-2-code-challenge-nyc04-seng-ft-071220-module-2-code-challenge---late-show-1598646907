@@ -6,6 +6,11 @@
     <div class="row justify-content-center">
         <h2> <%= "Episode Number: #{@episode.number} - Date: #{@episode.date} "%></h2>
     </div>
+    <% unless @episode.get_average_rating.nan? %>
+    <div class="row justify-content-center">
+        <h3> Average Rating: <%= @episode.get_average_rating %> </h3>
+    </div>
+    <% end %>
 
     <div class="row justify-content-center">
         <div class="col-6">
@@ -16,11 +21,14 @@
             </ul>
 
             <div class="row justify-content-center">
-                    <% if @success %>
-                        <div class="alert alert-success m-3" role="alert">
-                        <%= @success %>
-                        </div>
-                    <% end %>
+                <% if @success %>
+                <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+                    <%= @success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <% end %>
             </div>
 
         </div>
