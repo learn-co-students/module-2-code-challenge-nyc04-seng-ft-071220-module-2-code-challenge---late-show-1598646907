@@ -13,7 +13,10 @@ def create
   redirect_to guest_path
 end
 
-
+def show 
+  @guest = guest.find(params[:id]) 
+  
+end 
 
 
 end

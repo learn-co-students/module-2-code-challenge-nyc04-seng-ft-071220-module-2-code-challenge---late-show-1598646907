@@ -1,9 +1,9 @@
 class Guest < ApplicationRecord
- has_many :episodes 
-#  has_many :appearances, through: episodes 
-def full_name
-    self.first_name + " " + self.last_name
-end
+ has_many :episodes
+#  has_many :appearces, through: episodes
+# def full_name
+#     self.first_name + " " + self.last_name
+# end
 
 end
 

@@ -1,4 +1,12 @@
 <h1> Appearances </h1>
+
+    <% if @errors %>
+    <% @errors.each do |error|%>
+    <p style= "color: red"> <%= error %></p>
+    <% end %>
+    <% end %>
+
+
     <%= form_for @appearances do |f| %>
     <%= f.label :episode_id, "Episode: " %>
     <%= f.collection_select :episode_id, @episodes, :id, :date %> <br>

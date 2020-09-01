@@ -1,12 +1,9 @@
-<h1> <%= @guest.full_name%></h1>
-
-
-<ul>
-<% @guest.each do |appear_var| %>
-    <li><%= appear_var.episode%> | <%= appearance.rating %> </li>
-<% end %>
-</ul>
-<ul>
+<h1>Episodes Guest has appeared on</h1>
+<% @guest.episodes.each do |episode|%>
+    <h3><%= episode.guest.name %></h3><br>
+    <%= episode.date %><br>
+    <%= appearance.rating%>
+    <%end%>
 
 
 # On the Guest show page, add a list of the Episodes the Guest has appeared on.
