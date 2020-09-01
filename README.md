@@ -76,6 +76,14 @@ To log that a specific Guest appeared on a certain Episode, we need to create th
 - Episode can have multiple guests
 - Appearance stores a numeric rating
 
+Guest -< Appearance >- Episode
+
+Appearance belongs_to Guest & Episode; Appearance will have foreign keys of Guest & Episode
+Guest has_many Appearances
+Guest has_many Episodes through Appearances
+Episode has_many Appearances
+Episode has_many Guests through Appearances
+
 ### 2. New Appearance Form
 
 A user can fill out a form to create a new Appearance. They can:
