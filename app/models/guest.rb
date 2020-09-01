@@ -2,9 +2,18 @@ class Guest < ApplicationRecord
     has_many :appearances, -> { order("rating DESC")}
     has_many :episodes, through: :appearances
     default_scope {order(name: :asc)}
-
+    validate :name_occupation_exist?
 
     #dependent: :destroy ? resetting db:seed. Issue with dependent foreign Key.
 
+    private
+
+    def name_occupation_exist?
+        # byebug
+        match = Guest.find_by(name: self.name, occupation: self.occupation)
+        if match
+            self.errors.add(:name, "Already Exist" )
+        end
+    end
 
 end
