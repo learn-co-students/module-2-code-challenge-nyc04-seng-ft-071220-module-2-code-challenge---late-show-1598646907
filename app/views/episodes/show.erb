@@ -1,7 +1,21 @@
 <h1> Episode Number: <%=@episode.number%> <br> 
 <%= @episode.date %> </h1>
 
-<% @episode.guests.each do |guest| %>
-<%= link_to guest.name, guest_path(guest)%><br>
+<% sum = 0 %>
 
-<%end%>
+
+<ul>
+<% @episode.guests.each do |guest| %>
+    <li>
+        <% @appearance = guest.appearances.find_by(guest: guest) %>
+                <%sum += @appearance.rating%>
+        Rating: <%= @appearance.rating %> ---- 
+        <%= link_to guest.name, guest_path(guest)%><br>
+        <%end%>
+    </li>
+</ul>
+
+Average Rating: <%= ((sum+0.0) / @episode.guests.count).round(2) %>
+
+
+<%# "%.2f" % 1.23456 %>

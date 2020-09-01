@@ -1,9 +1,10 @@
 class Appearance < ApplicationRecord
   belongs_to :guest
   belongs_to :episode
+  
+  #dependent: :destroy ? resetting db:seed. Issue with dependent foreign Key.
 
   # validates :rating, presence: true,  numericality: { only_integer: true }, inclusion: {in: 1..5}
- 
   validate :correct_range, :guest_once_per_episode
 
   private 

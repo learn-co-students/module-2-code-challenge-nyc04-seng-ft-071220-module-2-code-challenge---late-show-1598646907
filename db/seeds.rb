@@ -37,6 +37,6 @@ roger = Guest.create!(name: "Roger", occupation: "Tennis player")
 ap1 = Appearance.create!(rating: 4, guest: jackie, episode_id:1)
 ap2 = Appearance.create!(rating: 3, guest: roger, episode_id:3)
 
-30.times do 
-  Appearance.create!(rating: rand(1..5), guest_id: rand(1..100), episode_id:rand(1..35))
+50.times do 
+  Appearance.create!(rating: rand(1..5), guest_id: rand(1..100), episode_id:rand(1..40))
 end
