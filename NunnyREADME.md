@@ -1,0 +1,1 @@
+* I created a domain appearance model. I have it saved under     assets > images

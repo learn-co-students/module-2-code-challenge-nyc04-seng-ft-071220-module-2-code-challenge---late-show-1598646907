@@ -1,7 +1,17 @@
-<h1>All The Guests</h1>
+<html>
+
+<body style="background-color:powderblue;">
+
+
+<h1 style="text-align:center">All The Guests</h1>
+
+<div>
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li> <%= link_to guest.name, guest %></li>
   <% end %>
 </ul>
+</div>
+
+</html>
