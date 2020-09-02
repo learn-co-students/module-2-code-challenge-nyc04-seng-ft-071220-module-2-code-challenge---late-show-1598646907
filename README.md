@@ -68,7 +68,7 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 
 
-### 1. Appearance Model
+### 1. Appearance Model (DONE)
 
 To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
 
@@ -76,7 +76,7 @@ To log that a specific Guest appeared on a certain Episode, we need to create th
 - Episode can have multiple guests
 - Appearance stores a numeric rating
 
-### 2. New Appearance Form
+### 2. New Appearance Form (DONE)
 
 A user can fill out a form to create a new Appearance. They can:
 
@@ -91,7 +91,7 @@ After submitting the form, the user should be redirected to the selected episode
 
 On the episode show page, a user should see:
 
-- Episode date
+* Episode date
 - A list of the guests who were on that episode
 - Each guest's name should link to the Guest Show page
 

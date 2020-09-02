@@ -1,0 +1,21 @@
+<h1> Episode: </h1>
+<%# headers of the page%>
+<br>
+<ul>
+    <% @episode.appearances.each do |a_date| %>
+        <li>
+           Episode date: <%= a_date.episode.date %>
+        </li>
+        <% end %>
+</ul>
+
+<h2>Guest: </h2>
+<ul>
+          <% @guest.appearances.each do |a_guest| %>
+        <li>
+           Guest on episode: <%= a_guest.guest.name %> 
+        </li>
+    <% end %>
+</ul>
+
+<%# added the episodes in this loop to get access to the attributes in the episodes%>
