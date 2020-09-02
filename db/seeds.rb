@@ -25,3 +25,26 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+# annie = Guest.create(name: "annie", occupation: "coach")
+# sylwia = Guest.create(name: "sylwia", occupation: "instructor")
+
+# Appearance.create(guest: annie.id, episode: Episode.all.id, rating: rand(1..10))
+# Appearance.create(guest: sylwia.id, episode: Episode.all.id, rating: rand(1..10))
+
+# rating = rand(1..20)
+
+# (1..40).each do |num|
+#   Appearance.create(episode: date, guest: g, rating: rating)
+#   rating = rating.next
+# end
+
+# def create_joiners(guest)
+#   appearance_number = rand(1..4)
+#   appearance_number.times do 
+#       Appearance.create(
+#           episode: episode, 
+#           guest: guest, 
+#           rating: rand(101)
+#       )
+#   end
+# end

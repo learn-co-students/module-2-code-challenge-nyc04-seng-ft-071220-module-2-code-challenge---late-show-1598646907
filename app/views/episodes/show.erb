@@ -1,0 +1,11 @@
+<h1> <%= @episode.date %> </h1>
+<h2> A list of the guests who were on that episode: </h2>
+
+<ul>
+    <% @episode.guests.map do |guest|%>
+    
+        <li> <%= link_to guest.name, guest_path(guest) %> </li>
+        
+    <%end%>
+
+</ul>
