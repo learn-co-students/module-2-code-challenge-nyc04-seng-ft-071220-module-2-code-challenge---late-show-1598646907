@@ -1,8 +1,27 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+ 
   resources :guests, only: [:index, :show]
   resources :episodes, only: [:index, :show]
   resources :appearances                      #validate rating!
+
+# - 7 RESTful routes written out for appearances: 
+
+# - get '/appearances', to: 'appearances#index', as: 'appearance'
+# - get 'appearances/new', to: 'appearances#new', as: 'new_appearance'
+# - post '/appearances', to: 'appearances#create'
+# - get '/appearances/:id', to: 'appearances#show', as: 'appearance'
+# - get 'appearances/:id/edit', to: 'appearances#edit', as: 'edit_appearance'
+# - patch 'appearances/:id', to: 'appearances#update'
+# - delete 'appearances/:id', to: 'appearances#destroy'
+
+
+  root to: 'welcome#home'
+
+# - I decided to make a welcome#home route / home landing page after seeing Wilson's awesome post in the Night Benders channel. 
+
+# - As a user or client, I want the functionality of a homepage so I can easily navigate the pages. 
+
 end
 
 # - On the GUEST SHOW page, add a list of the Episodes the Guest has APPEARED on.   *** :index, :show ***

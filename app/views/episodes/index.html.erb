@@ -1,10 +1,31 @@
 <h1>All Episodes</h1>
 <hr>
-<h3> <%= link_to "Click here for Guests", "/guests/" %></h3>
+<h3><%= link_to "All Guests", "/guests/" %> </h3>
+
+<h3><%= link_to "Create New Appearance", "/appearances/new" %> </h3>
+
+<h3><%= link_to "Click here for The Late Show", "/" %> </h3>
 <hr>
+
+<!-- Do not use buttons! I added these link_tos for a better user experience. -->
+
+<!-- As a user, I want to easily navigate through the pages. -->
+
 <ul>
   <% @episodes.each do |episode| %>
     <li> <%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li> 
     <br>
   <% end %>
 </ul>
+
+<!-- How do I link to every episode and date? That's a functionality I really want to implement! -->
+
+<!-- From the README:
+
+## What You Already Have
+
+The starter code includes migrations, models, and seed data for Guests and Episodes. 
+There are also routes, controller actions, and views to support listing the guests and episodes.
+
+After running the setup instructions above, visiting `'/guests'` will display all of the guests, 
+and visiting `'/episodes'` will display all of the episodes. -->

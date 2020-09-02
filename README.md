@@ -15,15 +15,15 @@ In this repo, there is a Rails application with some features built out. Your jo
 
 ## Setup
 
-<!-- Before you begin coding your solution, clone this repo and then `cd` into it. Then run `bundle install`, `rails db:migrate`, and `rails db:seed` to install dependencies and set up the database, and run `rails s` to start the server. -->
+Before you begin coding your solution, clone this repo and then `cd` into it. Then run `bundle install`, `rails db:migrate`, and `rails db:seed` to install dependencies and set up the database, and run `rails s` to start the server.
 
 ## The Domain
 
-<!-- The application keeps track of the guests that have appeared on the show.
+The application keeps track of the guests that have appeared on the show.
 
 There are three models in the domain: Guest, Episode, and Appearance.
 
-Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode. -->
+Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
 
 ## What You Already Have
 
@@ -97,22 +97,22 @@ On the episode show page, a user should see:
 
 ### 4. Guest Show Page Episode links
 
-<!-- On the Guest show page, add a list of the Episodes the Guest has appeared on.
+On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
 For each Episode, show the:
 
 - date of the Episode
 - rating for the Appearance
 
-Each Episode date should link to the show page for that Episode. -->
+Each Episode date should link to the show page for that Episode.
 
 ### 5. Appearance Rating Validation
 
-<!-- The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
+The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
 
 - Add a validation to ensure that the rating is between 1 and 5.
 - Add handling for this error to the Appearance create action.
-- The validation error should be shown on the Appearance creation form when a user attempts to save an appearance with an invalid rating. -->
+- The validation error should be shown on the Appearance creation form when a user attempts to save an appearance with an invalid rating.
 
 ### 6. Advanced: Additional Appearance Validation
 

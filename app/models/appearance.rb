@@ -1,12 +1,21 @@
 class Appearance < ApplicationRecord
+ 
   belongs_to :episode
   belongs_to :guest
 
+  # - Many to Many Relationship
+
+  # - Episode ---< Appearance >--- Guest
+
   validates :rating, numericality: {only_integer: true}, inclusion: {in: 1..5}
 
-  # Does this also work? -> validates :rating, numericality: {greater_than: 0, less_than_or_equal_to: 5}
+  # Does this validation also work? ->  " validates :rating, numericality: {greater_than: 0, less_than_or_equal_to: 5} "
+
+  # I am not sure yet how flash works and where errors should be implemented, I must revisit these concepts. 
 
 end
+
+# - From the README: 
 
 # - Guests and Episodes have a many to many relationship THROUGH Appearances. 
 # - A single Appearance BELONGS_TO one Guest and one Episode. 

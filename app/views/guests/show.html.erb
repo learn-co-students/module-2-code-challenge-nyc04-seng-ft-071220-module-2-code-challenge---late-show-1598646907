@@ -1,14 +1,30 @@
 <h1> Guest Show Page </h1>
-<h2> <%= @guest.name %> - <%= @guest.occupation.titleize %> </h2>
+<h2> <%= @guest.name %> - <%= @guest.occupation.titleize %> </h2> <!-- titleize the occupation -->
 <hr>
 <h3> Episode Appearances: </h3>
-<ul></ul>
+<ul>
 <% @guest.appearances.each do |appearance| %>
     <li> <%= link_to appearance.episode.date, episode_path(appearance.episode) %> </li>
     <br>
     <% end %>
     <br>
+</ul>
 <hr>
 </ul>
 <h4><%= link_to "All Guests", "/guests/" %> </h4>
 <h4><%= link_to "All Episodes", "/episodes/" %> </h4>
+<h4><%= link_to "Create New Appearance", "/appearances/new" %> </h4>
+<h4><%= link_to "Back to the Late Show", "/" %> </h4>                   
+
+
+<!-- The "/" path is localhost:3000 -->
+
+<!-- On the Guest show page, add a list of the Episodes the Guest has appeared on.
+
+For each Episode, show the:
+
+- date of the Episode
+
+- rating for the Appearance  (I'm not sure yet how to access the rating for the appearance, is another loop required?)
+
+Each Episode date should link to the show page for that Episode. -->
