@@ -1,0 +1,13 @@
+<h2><%=@guest.name %> </h1>
+ <br/>
+ <ul>
+ <li><%@guest.episodes.map do|episode|%>
+
+Date:<%=episode.date%><br/>
+ <%episode.appearances.find do |rating|%>
+  <li>
+Rating: <%=rating.rating%>
+    <%end%>
+    <%end%>
+ </li> </li> </ul>
+ <br/>

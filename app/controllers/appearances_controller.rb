@@ -1,21 +1,24 @@
 class AppearancesController < ApplicationController
     
     def index
+        @appearances=Appearances.all
     end
 
     def show
+        @appearance=Appearance.find(params[:id])
     end
 
     def new
         @appearance=Appearance.new
-        @guests=Guest.all
-        @episodes=Episode.all
+        @guest=Guest.all
+        @episode=Episode.all
 
     end
 
     def create
         @appearance=Appearance.create(appearance_params)
         if @appearance.save
+            redirect_to guest_path(@appearance.guest)
         else
             render :new
     end
