@@ -1,7 +1,11 @@
 <h1>All The Guests</h1>
+<%#= link_to "New Guest Form", new_guest_path%>
+<%= button_to "Home", root_path, :method => "get" %>
+<%= button_to "New Guest Form", new_guest_path, :method => "get" %>
+<hr>
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= link_to guest.name, guest_path(guest) %></li>
   <% end %>
 </ul>
