@@ -175,14 +175,12 @@ The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` a
 
 
 
-
-
-### 6. Advanced: Additional Appearance Validation
+<!-- ### 6. Advanced: Additional Appearance Validation
 
 A Guest should only appear on a given Episode once.
 
 - Add a validation to Appearance to ensure that each Guest can only appear once on the same Episode.
-- Update the error handling on the Appearance creation form to show this validation error.
+- Update the error handling on the Appearance creation form to show this validation error. -->
 
 
 
