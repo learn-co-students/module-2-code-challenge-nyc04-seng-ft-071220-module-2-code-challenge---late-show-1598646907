@@ -3,10 +3,11 @@
 <strong>Episodes:</strong>
     <ul>
         <% @guest.episodes.map do |episode| %>
-            <li><%=link_to episode.date, episode_path(episode) %>
-                <% episode.appearances.map do |app| %>
-                     <%= app %></li>
-                <%end%>
+            <li><%=link_to episode.date, episode_path(episode) %></li> rating:
+                <%# episode.appearances.map do |app| %>
+                <%#end%>
+
+                <%#how can I find both episode AND guest-specific appearances???%>
             <%end%>
     </ul>
     
