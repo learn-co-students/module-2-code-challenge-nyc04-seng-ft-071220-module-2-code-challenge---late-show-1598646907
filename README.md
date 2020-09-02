@@ -99,18 +99,18 @@ On the episode show page, a user should see:
 - Each guest's name should link to the Guest Show page
 
 ### 4. Guest Show Page Episode links
-[] create a guests show page
+[X] create a guests show page
 On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
 For each Episode, show the:
 
-- date of the Episode
-- rating for the Appearance
+- [X]date of the Episode
+- [X]rating for the Appearance
 
-Each Episode date should link to the show page for that Episode.
+[X]Each Episode date should link to the show page for that Episode.
 
 ### 5. Appearance Rating Validation
-[] Add in error handling when a user tries to create a new Appearance
+[X] Add in error handling when a user tries to create a new Appearance
 The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
 
 - Add a validation to ensure that the rating is between 1 and 5.
