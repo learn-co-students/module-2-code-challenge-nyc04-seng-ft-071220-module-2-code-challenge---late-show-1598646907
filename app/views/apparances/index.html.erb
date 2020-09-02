@@ -1,0 +1,15 @@
+<h1>All Apparances</h1>
+
+  <% @apparances.each do |apparance| %>
+    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+  <% end %>
+</ul>
+
+
+# A user can fill out a form to create a new Appearance. They can:
+
+# Choose an existing guest from a select dropdown
+# Choose an existing episode from a select dropdown
+# Enter a numeric rating
+# Submit the form
+# After submitting the form, the user should be redirected to the selected episode's show page.
