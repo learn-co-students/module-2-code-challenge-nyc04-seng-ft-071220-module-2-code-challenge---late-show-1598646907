@@ -9,14 +9,19 @@
 <p>This episode aired: <%= @episode.date %></p>
 <p>People who have guest starred in this episode:</p>
    
-   <% #have to iterate through the guests to show them here%>
-   <% #i should have access to guests because of my macros%>
+<% #have to iterate through the guests to show them here%>
+<% #i should have access to guests because of my macros%>
+<% #unsure of why the iteration is not working %>
+<% #update: it is now %>
 
 
-    <% @episodes.guests.each do |guest_info|%>
-        <li><%= link_to guest.name, guest_path(guest.id)%>  </li>
+    <% @episode.guests.each do |guest_info|%>
+        <li><%= link_to guest_info.name, guest_info%> </li>
     <%end%>
 
+    <% #maybe I should do an if loop if there were no guests %>
 
+<p>The average rating for this appearance is:</p>
+<% #need to create average %>
 
 </html>

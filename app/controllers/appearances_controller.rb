@@ -1,4 +1,5 @@
 class AppearancesController < ApplicationController
+    
     ######I created a domain model its under assets > images ############
    
     #I don't need to have an index here because I am focusing on 

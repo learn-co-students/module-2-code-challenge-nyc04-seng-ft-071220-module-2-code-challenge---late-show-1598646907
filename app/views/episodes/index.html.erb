@@ -6,9 +6,14 @@
 
 <h1 style="text-align:center">All Episodes</h1>
 
+<% #confused on how to set up my link_to with various interpolation on line 12. i know i want to link it to the show page%>
+
+<% #I wanted to work on validations next but have had no internet for the 2nd half of this challenge%>
+<% #I do not know how to work on validations without being able to look up the syntax %>
+
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"  %></li>
   <% end %>
 </ul>
 </html>

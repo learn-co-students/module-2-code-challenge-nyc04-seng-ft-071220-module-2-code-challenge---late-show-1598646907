@@ -5,18 +5,18 @@ Rails.application.routes.draw do
 
   #I don't feel comfortable using resources, don't want them here
 
-  #################guest routes #############################
+  #################  GUEST ######################################################################
   get "/guests", to: "guests#index", as: "guests"
   get "/guests/:id", to: "guests#show", as: "guest"
 
 
 
-  #################episode routes ############################
+  ################# EPISODE #####################################################################
   get "/episodes", to: "episodes#index", as: "episodes"
   get "/episodes/:id", to: "episodes#show", as: "episode"
 
 
-  #################appearances routes #########################
+  ################# Appearances ##################################################################
   #if this is my joiner file I probably need a #new and #create here
   get "/appearances", to: "appearances#index", as: "appearances"
   get "/appearances/new", to: "appearances#new", as: "new_appearance"
