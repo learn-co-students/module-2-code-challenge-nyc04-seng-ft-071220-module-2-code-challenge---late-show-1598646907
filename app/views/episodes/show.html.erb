@@ -1,0 +1,11 @@
+<h1 style= "text-decoration: underline;">
+Episode <%= @episode.number%> Info
+</h1>
+
+<p>This episode aired on <span style = "font-weight:bold;"> <%= @episode.date%> </span>had a guest appearance with the following guests:</p>
+
+<ul>
+    <% @episode.guests.each do |guest|%>
+    <li><%= link_to guest.name, guest_path(guest.id)%></li>
+    <%end%>
+</ul>

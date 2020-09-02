@@ -1,0 +1,11 @@
+
+
+<h1> <%= @guest.name%>'s Info</h1>
+
+<p> Here is a list of Episodes that <%= @guest.name%> has appeared on:
+
+<ul>
+    <% @guest.episodes.each do |episode|%>
+    <li>This episode aired on <%=link_to episode.date, episode_path(episode[:id])%> and had a rating of <span style = "font-weight:bold;"><%=Appearance.find_by(episode: episode)[:rating]%></span></li>
+    <%end%>
+</ul>

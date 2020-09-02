@@ -69,6 +69,7 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 
 ### 1. Appearance Model
+[X] Create an Appearance model and adjust macros for Guest and Episode
 
 To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
 
@@ -78,8 +79,10 @@ To log that a specific Guest appeared on a certain Episode, we need to create th
 
 ### 2. New Appearance Form
 
+[] create a form and a view for a new instance of Appearance to be made
+[X] I will need to create the following routes for Appearance: index, new and create
 A user can fill out a form to create a new Appearance. They can:
-
+[X] I need to use collection_select on the guest and episode instances
 - Choose an existing guest from a select dropdown
 - Choose an existing episode from a select dropdown
 - Enter a numeric rating
@@ -88,7 +91,7 @@ A user can fill out a form to create a new Appearance. They can:
 After submitting the form, the user should be redirected to the selected episode's show page.
 
 ### 3. Episode Show Page
-
+[X] Create a show page for the episodes
 On the episode show page, a user should see:
 
 - Episode date
@@ -96,7 +99,7 @@ On the episode show page, a user should see:
 - Each guest's name should link to the Guest Show page
 
 ### 4. Guest Show Page Episode links
-
+[] create a guests show page
 On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
 For each Episode, show the:
@@ -107,7 +110,7 @@ For each Episode, show the:
 Each Episode date should link to the show page for that Episode.
 
 ### 5. Appearance Rating Validation
-
+[] Add in error handling when a user tries to create a new Appearance
 The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
 
 - Add a validation to ensure that the rating is between 1 and 5.
