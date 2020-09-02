@@ -25,6 +25,10 @@ There are three models in the domain: Guest, Episode, and Appearance.
 
 Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
 
+Guest ----< Appearance >---- Episode
+-name        -guest_id       -date
+-occupation  -episode_id     -number
+
 ## What You Already Have
 
 The starter code includes migrations, models, and seed data for Guests and Episodes. There are also routes, controller actions, and views to support listing the guests and episodes.
@@ -80,8 +84,8 @@ To log that a specific Guest appeared on a certain Episode, we need to create th
 
 A user can fill out a form to create a new Appearance. They can:
 
-- Choose an existing guest from a select dropdown
-- Choose an existing episode from a select dropdown
+Choose an existing guest from a select dropdown  <!-- - (collection_select) -->
+Choose an existing episode from a select dropdown - <!-- - (collection_select) -->
 - Enter a numeric rating
 - Submit the form
 

@@ -1,0 +1,9 @@
+<h2>Guest List for Episodes</h2>
+
+<ul>
+    <% @episode.guests.uniq.each do |guest| %>
+        <li><%= guest.name%></li>
+
+    <%end%>
+
+</ul>
