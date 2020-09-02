@@ -1,0 +1,9 @@
+<h1> Add New Appearance! </hi>
+
+    <%= f.label :guest_id "Guest:" %>
+    <%= f.collection_select :guest_id, @guests, :id, :name %> <br>
+    <%= f.label :episode_id "Episode:" %>
+    <%= f.collection_select :epsode_id, @episodes, :id, :number %>
+
+<%= f.submit "Welcome to the Late Show!" %>
+<% end %>

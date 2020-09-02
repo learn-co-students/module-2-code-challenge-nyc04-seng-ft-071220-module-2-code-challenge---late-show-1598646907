@@ -1,0 +1,7 @@
+<h1>All Appearances</h1>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= "#{guest.name} appears on episode #{episode.number}. The episode has a rating of #{appearance.rating}."%></li>
+  <% end %>
+</ul>
