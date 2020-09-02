@@ -1,0 +1,18 @@
+<h1>Appearances</h1>
+
+<%if @errors%>
+    <% @errors.each do |error| %>
+        <%= error %>
+    <%end%>
+<%end%><br>
+<hr>
+
+<%= form_for @appearance do |f| %>
+<%= f.label "Rating" %>
+<%= f.number_field :rating %>
+<%= f.label "Select Guest" %>
+<%= f.collection_select :guest_id, Guest.all, :id, :name%>
+<%= f.label "Select Episode" %>
+<%= f.collection_select :episode_id, Episode.all, :id, :number %>
+<%= f.submit "Submit" %>
+<% end %>
