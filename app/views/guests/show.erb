@@ -5,7 +5,7 @@
 
  <h3> Episodes: </h3>
  <ul>
-   <% @guest.episodes.map do |episode| %>
+   <% @guest.episodes.uniq().map do |episode| %>
      <li> <%= episode.name %> </li>
    <% end %>
  </ul> 

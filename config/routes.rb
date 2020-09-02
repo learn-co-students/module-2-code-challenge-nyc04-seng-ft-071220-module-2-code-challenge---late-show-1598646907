@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/guests/:id", to: "guests#show", as: "guest"
   
   get "/episodes", to: "episodes#index", as: "episodes"
+  get "/episodes/new", to: "episodes#new", as: "new_episode"
+  post "/episodes", to: "episodes#create"
   get "/episodes/:id", to: "episodes#show", as: "episode"
 
   get "/appearances", to: "appearances#index", as: "appearances"

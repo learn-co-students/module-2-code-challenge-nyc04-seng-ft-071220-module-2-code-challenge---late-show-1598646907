@@ -7,5 +7,15 @@ class EpisodesController < ApplicationController
   def show
     @episode = Episode.find(params[:id])
   end
+
+  def new
+    @episode = Episode.new
+  end
+
+  def create
+    episode_params = params.require(:episode).permit(:date)
+    @episode = episode.create(episode_params)
+    redirect_to episode_path(episode)
+  end
   
 end
