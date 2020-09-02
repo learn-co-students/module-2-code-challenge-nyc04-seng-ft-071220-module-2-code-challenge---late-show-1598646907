@@ -1,0 +1,9 @@
+<h1>All Appearances</h1>
+
+<hr>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= "#{guest.name.titleize} appears on #{appearance.episode}"%></li>
+  <% end %>
+</ul>

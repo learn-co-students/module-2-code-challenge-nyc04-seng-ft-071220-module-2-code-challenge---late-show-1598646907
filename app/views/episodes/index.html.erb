@@ -1,5 +1,7 @@
 <h1>All Episodes</h1>
 
+<hr>
+
 <ul>
   <% @episodes.each do |episode| %>
     <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
