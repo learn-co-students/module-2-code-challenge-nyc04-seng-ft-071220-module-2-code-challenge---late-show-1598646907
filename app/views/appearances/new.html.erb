@@ -1,0 +1,39 @@
+<h1> Create a New Appearance! </h1>
+
+<hr>
+
+<h3> <%= link_to "All Guests", "/guests/" %> </h3>
+
+<h3> <%= link_to "All Episodes", "/episodes/" %> </h3>
+
+
+
+<hr><br>
+<%= form_for(@appearance) do |f| %>
+    <strong> <%= f.label :guest %> </strong>
+    <%= f.collection_select :guest_id, Guest.all, :id, :name %> <br>
+    <br>
+    <strong> <%= f.label :episode %> </strong>
+    <%= f.collection_select :episode_id, Episode.all, :id, :date %> <br>
+    <br>
+    <strong> <%= f.label :rating %> </strong>
+    <%= f.collection_select :rating, (1...6).to_a, :itself, :itself %>  
+   
+    <br>
+    </br> 
+
+    <%= f.submit %>
+    <% end %>
+
+    <div class="row justify-content-center">
+    <% if @errors %> 
+    <% @errors.each do |error|%>
+    <div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
+        <%= error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% end %>
+    <% end %>
+</div>

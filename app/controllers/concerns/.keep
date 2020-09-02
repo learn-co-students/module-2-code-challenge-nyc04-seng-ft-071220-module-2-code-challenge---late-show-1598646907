@@ -1,0 +1,4 @@
+<! -- # <% unless @episode.average_rating.nan? %> 
+# <h3> From a research team we found that the Average rating of this episode was <%= @episode.average_rating %> </h3>
+# <% end %> 
+-->
