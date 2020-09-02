@@ -1,0 +1,13 @@
+<h1>Episode: <%=@episode.number%></h1>
+<h1>Date: <%=@episode.date.strftime("%B %d, %Y")%></h1>
+<%if !@episode.guests.empty?%>
+    <h1>Episode rating average: <%=Appearance.avrg_rating(@episode)%></h1>
+<%end%>
+
+<ul>
+    <% @episode.guests.each do |guest|%>
+        <li>
+        <%= link_to guest.name, show_guest_path(guest)%>
+        </li>
+    <%end%>
+</ul>

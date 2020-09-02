@@ -1,0 +1,9 @@
+<h1><%=@guest.name%></h1>
+<ul>
+    <% @guest.episodes.each do |episode|%>
+        <li>
+        <%appearance_instance = episode.appearances.find {|appea|appea.episode_id == episode.id}%>
+        Rating: <%= appearance_instance.rating%> - <%= link_to episode.date.strftime("%B %d, %Y"), show_episode_path(episode)%>
+        </li>
+    <%end%>
+</ul>

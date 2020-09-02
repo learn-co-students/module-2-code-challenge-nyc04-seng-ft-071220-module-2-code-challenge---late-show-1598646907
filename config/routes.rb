@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :guests, only: [:index]
-  resources :episodes, only: [:index]
+  resources :appearances, only: [:index]
+  get "/appearances/new", to: "appearances#new", as: "new_appearance"
+  post "/appearances", to: "appearances#create"
+
+  get "/guests", to: "guests#index"
+  get "/guests/:id", to: "guests#show", as: "show_guest"
+  
+
+  get "/episodes", to: "episodes#index"
+  get "/episodes/:id", to: "episodes#show", as: "show_episode"
 end
