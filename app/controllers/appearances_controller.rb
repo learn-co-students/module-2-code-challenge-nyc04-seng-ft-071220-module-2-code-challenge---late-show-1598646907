@@ -13,9 +13,14 @@ class AppearancesController < ApplicationController
 
     def create
         appearance_params = params.require(:appearance).permit(:episode_id, :guest_id, :rating)
-        @new_appearance = Appearance.create(appearance_params)
-        byebug
-        #redirect to the episode show page
-        redirect_to "/episodes/#{params[:appearance][:episode_id]}"
+        @new_appearance = Appearance.new(appearance_params)
+        #byebug
+        if @new_appearance.valid?
+            @new_appearance.save
+            #redirect to the episode show page
+            redirect_to "/episodes/#{params[:appearance][:episode_id]}"
+        else
+            render :new
+        end
     end
 end

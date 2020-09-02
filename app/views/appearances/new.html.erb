@@ -8,7 +8,22 @@
 <%= f.collection_select :guest_id, Guest.all, :id, :name %>
 <br><br>
 <%= f.label "Rating"%>
-<%= f.number_field :rating, in: 1..5 %>
+<%# I purposefully made the number field have a range of 1 to 100 to check if the AR validation works properly%>
+<%= f.number_field :rating, in: 1..100 %>
 <br><br>
 <%= f.submit "Submit"%>
 <%end%>
+
+<% if @new_appearance.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      An Error stopped this form from being submitted:
+    </h2>
+    
+    <ul>
+    <% @new_appearance.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
