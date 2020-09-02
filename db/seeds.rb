@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Guest.destroy_all
+Appearance.destroy_all
 
 require 'csv'
 
@@ -25,12 +26,12 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
-app_1 = Appearance.create(guest_id: 274, episode_id: 1, rating: 5)
-app_2 = Appearance.create(guest_id: 275, episode_id: 2, rating: 4)
-app_3 = Appearance.create(guest_id: 276, episode_id: 3, rating: 3)
-app_4 = Appearance.create(guest_id: 276, episode_id: 5, rating: 2)
-app_5 = Appearance.create(guest_id: 278, episode_id: 3, rating: 1)
-app_6 = Appearance.create(guest_id: 279, episode_id: 6, rating: 3)
-app_7 = Appearance.create(guest_id: 280, episode_id: 7, rating: 2)
+# app_1 = Appearance.create(guest_id: 274, episode_id: 1, rating: 5)
+# app_2 = Appearance.create(guest_id: 275, episode_id: 2, rating: 4)
+# app_3 = Appearance.create(guest_id: 276, episode_id: 3, rating: 3)
+# app_4 = Appearance.create(guest_id: 276, episode_id: 5, rating: 2)
+# app_5 = Appearance.create(guest_id: 278, episode_id: 3, rating: 1)
+# app_6 = Appearance.create(guest_id: 279, episode_id: 6, rating: 3)
+# app_7 = Appearance.create(guest_id: 280, episode_id: 7, rating: 2)
 
 puts "Done Seeding!!!!"

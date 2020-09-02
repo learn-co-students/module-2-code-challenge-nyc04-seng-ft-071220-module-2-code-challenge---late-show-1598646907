@@ -9,6 +9,7 @@ class EpisodesController < ApplicationController
   def show
   end
 
+
   private
 
     def get_episode
