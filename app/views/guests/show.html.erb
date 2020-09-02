@@ -1,15 +1,19 @@
- <h1>Guest Name: <%=@guest.name %> </h1>
- <br/>
- <ul>
- <%@guest.episodes.map do|episode|%>
+        <h1>Guest Name: <%=@guest.name %> </h1>
+        <br/>
+        <ul>
+        
+        <%@guest.episodes.map do|episode|%>
 
 Date: <%=link_to episode.date, episode_path(episode.id)%><br/><br/>
 Episode: <%=episode.number%><br/>
- <%episode.appearances.find do |rating|%> <br/>
-Rating: <%=rating.rating%>
+
+        <%episode.appearances.find do |rating|%> <br/>
+Rating: <%=(rating.rating)%>
 <br/><br/>
-    <%end%>
-    <%end%>
+         <%end%>
+         <%end%>
  </ul>
  <br/>
+
+<%# the rating is working strangely. Sometimes it shows the correct ratings and other times it doesnt. %>
 

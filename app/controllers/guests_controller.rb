@@ -6,21 +6,14 @@ class GuestsController < ApplicationController
   
   def show
     @guest=Guest.find(params[:id])
+    # @guest=Guest.includes(:appearances).order('appearances.rating ASC')
+
+   
+    #  @guest.appearances.order(rating: :asc).map do |rating|
+    #   rating.rating
+    # end
+
   end
 
-
-  def new
-  end
-
-  def create
-  end
-
-
-  private
-
-  # def guest_params
-  #   params.require(:guest).permit(:name, :occupation)
-  # end
-
-
+  
 end

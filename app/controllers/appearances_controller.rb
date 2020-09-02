@@ -1,7 +1,7 @@
 class AppearancesController < ApplicationController
     
     def index
-        @appearances=Appearances.all
+        @appearances=Appearances.all.order(rating: :asc)
     end
 
     def show

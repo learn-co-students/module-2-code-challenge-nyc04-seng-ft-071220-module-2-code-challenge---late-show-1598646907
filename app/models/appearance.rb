@@ -3,4 +3,9 @@ class Appearance < ApplicationRecord
   belongs_to :guest
 
   validates :rating, :inclusion => 1..5
+  validates :guest, uniqueness: { scope: :episode, 
+   message: "should only be in one episode once"}
+
+
+  #  scope :asc, order(rating: :asc)
 end
