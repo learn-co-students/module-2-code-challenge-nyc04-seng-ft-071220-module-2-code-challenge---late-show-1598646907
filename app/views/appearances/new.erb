@@ -1,12 +1,15 @@
 <h2> New Appearance Form</h2>
 
-<%= form_for @appearance do |f| %>
+<hr>
+
+<%= form_for (@appearance) do |f| %>
     <%= f.label :guest_id %>
     <%= f.collection_select :guest_id, Guest.all, :id, :name %>
     <%= f.label :episode_id %>
     <%= f.collection_select :episode_id, Episode.all, :id, :date %>
     <%= f.label :number %>
-    <%= f.integer_field number %>
-    <%= f.submit  %>
+    <%= f.number_field :number %>
+    <%= f.submit "Let's Go!" %>
+
 
 <% end %>

@@ -1,4 +1,5 @@
 class AppearancesController < ApplicationController
+    
 
     def new
         @appearance = Appearance.new
@@ -8,7 +9,13 @@ class AppearancesController < ApplicationController
     def create
         @appearance = Appearance.create(appearance_params)
 
-        redirect_to episode_path(@episode)
+        if  number entered is outside of the range [1..5]
+            message "that number is outside the reange"
+        else
+            true
+
+
+        redirect_to episode_path(@appearance.episode)
     end
 
 
