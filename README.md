@@ -137,6 +137,17 @@ On the Episode show page, show the average rating of the Appearances for the epi
 
 On the Guest show page, order the Episodes by the Appearance rating so that the highest rated shows first in the list.
 
+    #For ordering on the attribute of an associated model you have to include it:
+
+    #tried on Guest model:
+    # Guest.joins(:appearances).order("rating DESC")
+    # Guest.includes(:appearances).order("rating DESC")
+    # scope :ordered, -> { joins(:appearances).order("rating DESC") }
+
+    #tried in rails console and saw this showed all of the specific guest's episodes ordered by the highest rating
+    # Guest.first.appearances.order("rating DESC")
+
+
 ### Feature Demo
 
 ![screen capture of feature demo](late-show-features-demo.gif)
