@@ -12,11 +12,10 @@
 
 <div>
 <%= form_for @appearance do |f| %>
-<%=f.collection_select(:guest_id, @guests, :id, :name) %><br>
-<%=f.collection_select(:episode_id, @episodes, :id, :date) %><br>
-<%=f.label :rating %><br>
-<%=f.number_field :rating %>
-<%=f.submit "Submit"%>
+<p><%=f.label "Aired Date:" %> <%=f.collection_select(:episode_id, @episodes, :id, :date) %></p>
+<p><%=f.label "Name of Guest:" %> <%=f.collection_select(:guest_id, @guests, :id, :name) %></p>
+<p><%=f.label "Rating (1-5):" %> <%=f.number_field :rating %></p>
+<p><%=f.submit "Submit"%></p>
 <% end %>
 
 </div>
