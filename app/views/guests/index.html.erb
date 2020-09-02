@@ -4,6 +4,6 @@
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= "#{guest.name} who is #{guest.age} years old"%></li>
   <% end %>
 </ul>
