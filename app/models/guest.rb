@@ -5,6 +5,7 @@ class Guest < ApplicationRecord
     validate :name_occupation_exist?
 
     #dependent: :destroy ? resetting db:seed. Issue with dependent foreign Key.
+    #using validates, how write both instance name && occupation using uniqueness?
 
     private
 

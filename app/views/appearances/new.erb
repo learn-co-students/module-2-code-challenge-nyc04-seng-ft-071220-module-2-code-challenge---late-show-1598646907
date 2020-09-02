@@ -24,6 +24,9 @@
 
 <%# 
 collection_check_boxes? 
+1 appearance, 1 guest to multiple episodes ?
+f.collection_check_boxes :episode_ids, Episode.all, :id, :number
+
 Can you link check boxes together, if check of number, 
 corresponding date will also be checked off. 
 
