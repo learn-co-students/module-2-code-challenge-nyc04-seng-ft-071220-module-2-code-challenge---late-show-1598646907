@@ -1,13 +1,15 @@
-<h2><%=@guest.name %> </h1>
+ <h1>Guest Name: <%=@guest.name %> </h1>
  <br/>
  <ul>
- <li><%@guest.episodes.map do|episode|%>
+ <%@guest.episodes.map do|episode|%>
 
-Date:<%=episode.date%><br/>
- <%episode.appearances.find do |rating|%>
-  <li>
+Date: <%=link_to episode.date, episode_path(episode.id)%><br/><br/>
+Episode: <%=episode.number%><br/>
+ <%episode.appearances.find do |rating|%> <br/>
 Rating: <%=rating.rating%>
+<br/><br/>
     <%end%>
     <%end%>
- </li> </li> </ul>
+ </ul>
  <br/>
+

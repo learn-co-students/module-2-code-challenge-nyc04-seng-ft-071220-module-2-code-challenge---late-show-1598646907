@@ -17,10 +17,13 @@ class AppearancesController < ApplicationController
 
     def create
         @appearance=Appearance.create(appearance_params)
-        if @appearance.save
+
+        if @appearance.valid?
             redirect_to guest_path(@appearance.guest)
         else
-            render :new
+            #byebug
+            
+          redirect_to new_appearances_path
     end
 end
 
