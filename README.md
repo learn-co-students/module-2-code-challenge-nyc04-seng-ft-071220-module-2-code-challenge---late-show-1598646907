@@ -59,10 +59,11 @@ Guests
 
 - Episodes index
 - Guests index
+<!-- need appearance -->
 
 ## Instructions
 
-Update the code of the application to meet the following deliverables. Follow RESTful naming conventions and the MVC pattern to divide responsibility.
+[x]Update the code of the application to meet the following deliverables. Follow RESTful naming conventions and the MVC pattern to divide responsibility.
 
 ***Read through these deliverables carefully to understand the requirements for this code challenge. Tackle them one by one, as they build on each other sequentially.***
 
@@ -70,20 +71,20 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 ### 1. Appearance Model
 
-To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
+[x]To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
 
-- Guest can appear on many episodes
-- Episode can have multiple guests
-- Appearance stores a numeric rating
+-[x]Guest can appear on many episodes
+-[x] Episode can have multiple guests
+-[ ] Appearance stores a numeric rating
 
 ### 2. New Appearance Form
 
-A user can fill out a form to create a new Appearance. They can:
+[x]A user can fill out a form to create a new Appearance. They can:
 
-- Choose an existing guest from a select dropdown
-- Choose an existing episode from a select dropdown
-- Enter a numeric rating
-- Submit the form
+- [X]Choose an existing guest from a select dropdown
+- [x]Choose an existing episode from a select dropdown
+- [X]Enter a numeric rating
+- [X]Submit the form
 
 After submitting the form, the user should be redirected to the selected episode's show page.
 
@@ -99,7 +100,7 @@ On the episode show page, a user should see:
 
 On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
-For each Episode, show the:
+[x]For each Episode, show the:
 
 - date of the Episode
 - rating for the Appearance

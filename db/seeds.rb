@@ -12,6 +12,9 @@ Appearance.destroy_all
 
 
 require 'csv'
+# connecting all my seed data together , had to look this up. hmm
+# i created some test seed data not sure what to do with this now? it shows up in the index page 
+# however i need this seed to connect with my appearances? 
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -20,7 +23,7 @@ csv.first(100).each do |row|
   g.occupation = row['GoogleKnowlege_Occupation']
   g.save
 end
-
+ 
 date = Date.parse('2015-09-08')
 
 (1..40).each do |num|

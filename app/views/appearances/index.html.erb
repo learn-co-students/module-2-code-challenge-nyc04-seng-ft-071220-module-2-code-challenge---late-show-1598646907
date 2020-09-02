@@ -1,0 +1,22 @@
+ <em><p><h1>Appearances By ...</h1></p><em>
+ 
+ 
+ <%= form_for(@appearance) do |f| %>
+ <%= f.label :guest %>
+ <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+ <br>
+ <%= f.label :episode %>
+ <%= f.collection_select :episode_id, Episode.all, :id, :name %>
+
+ <%= f.submit %>
+ <% end %>
+
+
+
+<%# # a user can fill out form and create a new appearance by selecting 
+# from the drop down menu of the existing episodes list from a guest.
+ this form should allow the user to select from the collection of gues and appearances from a guest and enter a rating for thAT
+ AND GIVE that episode a rating with a number .
+
+ form is not working b/c of my seed data i dont know how to fix this issue ?
+ google is not helping , need help with this issue .

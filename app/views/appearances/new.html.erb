@@ -1,0 +1,22 @@
+<em><h1>Create a new Appearance ....</h1><em>
+
+<%= form_for @appearance do |f| %>
+<%= f.label :guest %>
+<br>
+<%= f.collection_select :guest_id, Guest.all, :id, :name %>
+
+
+<%= f.label :episode_id %>
+<br>
+<%= f.collection_select :episode_id, Episode.all, :id, :number %>
+<br>
+
+<%= f.label :rating %>
+<br>
+<%= f.number_field :rating %>
+</br>
+<%= f.submit %>
+<%end%>
+
+<%# creating a form for my models something went wrong but what still trying to figure it 
+out, i think it may have to do with my routes  %>
