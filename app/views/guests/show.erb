@@ -1,0 +1,20 @@
+<h1> Guest Show Page </h1>
+
+<ul>
+# On the Guest show page, add a list of the Episodes the Guest has appeared on.
+# For each Episode, show the:
+# - date of the Episode
+# - rating for the Appearance
+
+# Iterate through episodes of the specific guest and write a date for episode_var.
+
+<% @guest.episodes.each do |episode_var| %>
+    <li>
+    <%= episode_var.date %>
+   
+    </li>
+    <% end %>
+</ul>
+
+#On the Guest show page, order the Episodes by the Appearance rating so that the highest rated shows first in the list.
+
