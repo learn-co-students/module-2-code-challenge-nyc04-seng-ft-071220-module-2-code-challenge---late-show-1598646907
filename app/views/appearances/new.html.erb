@@ -1,0 +1,13 @@
+<h2>Create An Appearance! </h2>
+<hr>
+
+<%=form_for @appearance do |f|%>
+<%=f.label :guest_id%>
+<%=f.collection_select :guest_id, @guests, :id, :name %><br/><br/>
+<%=f.label :episode_id%>
+<%=f.collection_select :episode_id, @episodes, :id, :number%><br/><br/>
+<%=f.label :rating%>
+<%=f.text_field :rating%><br/><br/>
+
+<%=f.submit 'Submit Appearance!'%>
+<%end%>
