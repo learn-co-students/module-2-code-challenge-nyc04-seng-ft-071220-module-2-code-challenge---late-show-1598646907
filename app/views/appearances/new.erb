@@ -1,5 +1,6 @@
-
+<html>
 <h2>Appearance form</h2>
+<body style="background-color:powderblue;">
 
 <%= form_for @appearance do |f| %>
     <%= f.label :guest_id %>
@@ -8,8 +9,12 @@
     <%= f.label :episode_id %>
     <%= f.collection_select :episode_id, @episodes, :id, :number%><br>
     <br>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %><br>
     <br>
     <%= f.submit %>
     <br>
     <br>
 <% end%>
+
+</html>
