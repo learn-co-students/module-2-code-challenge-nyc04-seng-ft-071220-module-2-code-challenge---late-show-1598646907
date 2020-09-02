@@ -12,6 +12,7 @@ class AppearancesController < ApplicationController
         @appearance=Appearance.new
         @guest=Guest.all
         @episode=Episode.all
+        @errors=flash[:errors]
 
     end
 
@@ -22,7 +23,7 @@ class AppearancesController < ApplicationController
             redirect_to guest_path(@appearance.guest)
         else
             #byebug
-            
+            flash[:errors]=@appearance.errors.full_messages
           redirect_to new_appearances_path
     end
 end
