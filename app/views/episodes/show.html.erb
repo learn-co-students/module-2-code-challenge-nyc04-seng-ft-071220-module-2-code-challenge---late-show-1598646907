@@ -1,0 +1,13 @@
+<%#check if view file exists before you spend 30mins pulling your hair out%>
+
+<h2>Episode <%= @episode.number %></h2>
+<div>
+<p><strong>Aired Date:</strong> <%= @episode.date%></p>
+<strong>Guests:</strong>
+    <ul>
+        <% @episode.guests.each do |guest| %>
+         <li><%=link_to guest.name, guest_path(guest) %></li>
+        <% end %>
+   </ul>
+    
+</div>

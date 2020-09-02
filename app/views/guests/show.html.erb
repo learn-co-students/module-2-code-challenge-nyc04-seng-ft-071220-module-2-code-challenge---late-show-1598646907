@@ -1,0 +1,13 @@
+<h2><%= @guest.name %></h2>
+<div>
+<strong>Episodes:</strong>
+    <ul>
+        <% @guest.episodes.map do |episode| %>
+            <li><%=link_to episode.date, episode_path(episode) %>
+                <% episode.appearances.map do |app| %>
+                     <%= app %></li>
+                <%end%>
+            <%end%>
+    </ul>
+    
+</div>
