@@ -1,3 +1,7 @@
+<style>
+    #error_explanation{color:red;}
+</style>
+
 <h1> Appearance Form </h1>
 
 <%= form_for @new_appearance do |f|%>
@@ -19,7 +23,7 @@
     <h2>
       An Error stopped this form from being submitted:
     </h2>
-    
+
     <ul>
     <% @new_appearance.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

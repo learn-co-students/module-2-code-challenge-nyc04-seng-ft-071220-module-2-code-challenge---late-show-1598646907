@@ -110,7 +110,7 @@ For each Episode, show the:
 [X]Each Episode date should link to the show page for that Episode.
 
 ### 5. Appearance Rating Validation
-[] Add in error handling when a user tries to create a new Appearance
+[X] Add in error handling when a user tries to create a new Appearance
 The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
 
 - Add a validation to ensure that the rating is between 1 and 5.
