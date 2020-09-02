@@ -88,20 +88,34 @@ Episode has_many Guests through Appearances
 
 A user can fill out a form to create a new Appearance. They can:
 
-- Choose an existing guest from a select dropdown
-- Choose an existing episode from a select dropdown
-- Enter a numeric rating
+- Choose an existing guest from a select dropdown <!-- 4a. "select dropdown" = collection_select -->
+- Choose an existing episode from a select dropdown <!-- 4a. "select dropdown" = collection_select -->
+- Enter a numeric rating <!-- 4b. "numeric rating" = number_field -->
 - Submit the form
 
 After submitting the form, the user should be redirected to the selected episode's show page.
+
+ <!-- 1. write out the new and create routes -->
+ <!-- 2. define the #new and #create actions in the Appearances Controller -->
+   <!-- 2a. for new method, @appearance = Appearance.new & have access to all other necessary info -->
+   <!-- 2b. for create method, create the appearance with the params from user -->
+ <!-- 3. create new.erb in views/appearances -->
+ <!-- 4. use form_for to create the form in new.erb -->
+ <!-- 5. in the Appearances Controller, redirect_to the selected episode's page -->
+   <!-- 5a. must go through appearance to get the episode_id for episode_path; redirect_to episode_path(@appearance.episode.id) -->
 
 ### 3. Episode Show Page
 
 On the episode show page, a user should see:
 
-- Episode date
+- Episode date <!-- 3a. display episode date -->
 - A list of the guests who were on that episode
 - Each guest's name should link to the Guest Show page
+
+<!-- 1. create show route -->
+<!-- 2. define show method in Episodes Controller & find specific episode to display with params-->
+<!-- 3. create in views/episodes show.erb -->
+  <!-- 3b. for episode's guests, with each enumerator list out their name & have their name link_to their page -->
 
 ### 4. Guest Show Page Episode links
 
@@ -109,10 +123,16 @@ On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
 For each Episode, show the:
 
-- date of the Episode
+- date of the Episode 
 - rating for the Appearance
 
 Each Episode date should link to the show page for that Episode.
+
+<!-- 1. create show route -->
+<!-- 2. define show method in Guests Controller & find specific guest to display with params-->
+<!-- 3. create in views/guests show.erb -->
+  <!-- 3a. for guest's episodes, with each enumerator list out the episode's date and appearance rating -->
+   <!-- go through appearances for the rating and get to episode from appearance for the date; have the date link_to the episode's (show) page -->
 
 ### 5. Appearance Rating Validation
 
@@ -122,6 +142,13 @@ The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` a
 - Add handling for this error to the Appearance create action.
 - The validation error should be shown on the Appearance creation form when a user attempts to save an appearance with an invalid rating.
 
+<!-- 1. write the validations in Appearance model (check there for more info on validates) -->
+<!-- 2. write condition if/else in create method in Appearances Controller -->
+  <!-- 2a. if the appearance is valid, redirect_to the selected episode's page (stated in deliverable 2) -->
+  <!-- 2b. else save the appearance's (full message) errors in flash hash && redirect back to the new appearance form to show the user their errors-->
+  <!-- 2c. add to #new method the error messages from the flash hash -->
+  <!-- 2d. in views/appearances/new.erb (Appearance creation form) add that if there are errors show each of them -->
+
 ### 6. Advanced: Additional Appearance Validation
 
 A Guest should only appear on a given Episode once.
@@ -129,23 +156,30 @@ A Guest should only appear on a given Episode once.
 - Add a validation to Appearance to ensure that each Guest can only appear once on the same Episode.
 - Update the error handling on the Appearance creation form to show this validation error.
 
+<!-- write the validations in Appearance model (check there for more info on validates) -->
+
 ### 7. Advanced: Episode Average Rating
 
 On the Episode show page, show the average rating of the Appearances for the episode.
+
+<!-- 1. write average_rating method in the Episode model (check there for more info) -->
+<!-- 2. in the views/episodes/show.erb call on this method to show the average_rating -->
 
 ### 8. Advanced: Guest Show Page Appearance Ordering
 
 On the Guest show page, order the Episodes by the Appearance rating so that the highest rated shows first in the list.
 
-    #For ordering on the attribute of an associated model you have to include it:
+    #For ordering on the attribute of an associated model you have to include it (apidock)
 
-    #tried on Guest model:
+    #tried on Guest model (but didn't work):
     # Guest.joins(:appearances).order("rating DESC")
     # Guest.includes(:appearances).order("rating DESC")
     # scope :ordered, -> { joins(:appearances).order("rating DESC") }
 
     #tried in rails console and saw this showed all of the specific guest's episodes ordered by the highest rating
     # Guest.first.appearances.order("rating DESC")
+
+    #after comparing the SQL, saw that GUEST & APPPEARANCE load were different at GUEST so ultimately on the show page where I list out the appearances, added the order there to get the desired result (from @guest.appearances.each to @guest.appearances.order("rating DESC").each)
 
 
 ### Feature Demo
