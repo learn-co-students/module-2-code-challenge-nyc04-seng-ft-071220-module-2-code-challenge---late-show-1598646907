@@ -1,0 +1,7 @@
+<h1> <%= @guest.name %> </h1>
+
+<% @guest.appearances.each do |appearance| %>
+    
+    <li>Episode: <%= link_to appearance.episode.number, episode_path(appearance.episode.id) %> | Rating: <%= appearance.rating %></li>
+    
+<% end %>

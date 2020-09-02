@@ -1,26 +1,15 @@
 class AppearancesController < ApplicationController
 
-    # def index
-    #     @appearances = Appearance.all
-    # end
-
     def new
         @appearance = Appearance.new
     end
 
     def create
         @appearance = Appearance.create(appearance_params)
-        redirect_to appearance_path(@appearance)
+        redirect_to episode_path(@appearance.episode.id) 
     end
 
-    # def show
-    # end
-
-    # def edit
-    # end
-
-    # def update
-    # end
+    private
 
     def appearance_params
         params.require(:appearance).permit(:guest_id, :episode_id, :rating)

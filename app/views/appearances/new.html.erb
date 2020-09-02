@@ -1,15 +1,18 @@
-<h1> Appearance Page </h1>
+<h1> Create An Appearance </h1>
 
 <%= form_for (@appearance) do |f|%>
-    <%= f.label :guest%>
+    <%= f.label :guest%><br>
     <%= f.collection_select :guest_id, Guest.all, :id, :name%>
+    <br>
 
-    <%= f.label :episode%>
+    <%= f.label :episode%><br>
     <%= f.collection_select :episode_id, Episode.all, :id, :number%>
+    <br>
 
-    <%= f.label :rating%>
+    <%= f.label :rating%><br>
     <%= f.number_field :rating%>
+    <br>
 
-    <%= f.submit%>
+    <%= f.submit "Create"%>
 <% end %>
 

@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20200901215801) do
 
   create_table "appearances", force: :cascade do |t|
-    t.integer "rating"
     t.integer "guest_id"
     t.integer "episode_id"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
